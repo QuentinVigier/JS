@@ -1,0 +1,28 @@
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10%;
+    background-color: darkslateblue;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:active{
+    transform: scale(0.80);
+}
+
+.resultat{
+    border: solid black 4px;
+    height: 100px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
