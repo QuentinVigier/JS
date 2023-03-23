@@ -1,0 +1,101 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    align-items: center;
+    background: linear-gradient(320deg,#d93caf, #246484, #fc7cd3 );
+    display: flex;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-display: swap;
+    height: inherit;
+    justify-content: center;
+}
+
+.wrapper{
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10%;
+    box-shadow: 2px 4px 30px rgba(35, 35, 35, 5);
+    color: #232323;
+    flex-basis: 400px;
+    height: 540px;
+    padding: 25px 35px;
+}
+
+.screen{
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 15px;
+    overflow: auto;
+    font-size: 30px;
+    text-align: right;
+    padding: 20px;
+    width: 326px;
+}
+
+.calc-button-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 5%, 0;
+    padding: 10px;
+}
+
+.calc-button{
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10%; 
+    box-shadow: 2px 4px 30px rgba(35, 35, 35, 0.01);
+    color: #232323;
+    flex-basis: 20%;
+    font-family: inherit;
+    height: 65px;
+    font-size: 24px;
+}
+
+.calc-button:last-child{
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 10%; 
+    box-shadow: 2px 4px 30px rgba(35, 35, 35, 0.01);
+    color: #fff ; 
+    background: #553252;
+}
+
+.calc-button:last-child:hover{
+    background-color: inherit;
+    color: inherit;
+}
+
+.calc-button:hover{
+    background-color: inherit;
+}
+
+.calc-button:active{
+    background-color: #fc7cd3;
+}
+
+.double{
+    flex-basis: 47%;
+}
+
+.triple{
+    flex-basis: 73%;
+}
