@@ -8,21 +8,21 @@ let getMovie = () => {
     `;
 
     if(movieName.length <= 0){
-        result.innerHTML = `<h3 class="msg>Veuillez entrer le nom d'un film </h3>`;
+        result.innerHTML = `<h3 class="msg">Veuillez entrer le nom d'un film </h3>`;
     }
 
     else{
         fetch(url)
         .then((resp) => resp.json())
         .then((data) =>{
-            if(data.Response == "True"){
+            if(data.Response == "True" ) {
                 result.innerHTML = `
-                    <div class = "info>
-                        <img src =${data.Poster} class="poster"
+                    <div class = "info">
+                        <img src =${data.Poster} class="poster">
                         <div>
                             <h2>${data.Title}</h2>
-                            <div class = "rating"
-                            <img src="star.svg"/>
+                            <div class = "rating">
+                            <img src="./star.svg">
                             <h4>${data.imdbRating}</h4>
                             </div>
                             <div class = "details">
@@ -35,6 +35,7 @@ let getMovie = () => {
                                 ("</div><div>")}</div>
                             </div>
                         </div>
+                        </div>
                         <h3>Plot : </h3>
                         <p>${data.Plot}</p>
                         <h3>Cast : </h3>
@@ -43,7 +44,7 @@ let getMovie = () => {
             }
 
             else{
-                result.innerHTML = `<h3 class = "msg>${data.Error}</h3>`;
+                result.innerHTML = `<h3 class = "msg">${data.Error}</h3>`;
             }
         })
 
