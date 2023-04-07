@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="budget-container">
+        <div class="app-title">
+            <h1>Budget App</h1>
+        </div>
+        <div class="budget-header">
+            <div class="balance">
+                <div class="title">
+                    <h3>Balance</h3>
+                </div>
+                <div class="value"></div>
+            </div>
+            <div class="account">
+                <div class="income">
+                    <div class="title">Revenus</div>
+                    <div class="income-total"></div>
+                </div>
+                <div class="chart"></div>
+                <div class="outcome">
+                    <div class="title">Dépenses</div>
+                    <div class="outcome-total"></div>
+                </div>
+            </div>
+        </div>
+        <div class="budget-dashboard">
+            <div class="dashtitle"><h1>Dashboard</h1></div>
+            <div class="toggle">
+                <div class="tab1">Dépenses</div>
+                <div class="tab2">Revenus</div>
+                <div class="tab3">Total</div>
+            </div>
+            <div class="hide" id="expense"></div>
+            <div id="income">
+                <ul class="list">
+                <li id="0" class="income">
+                    <div class="entry">Salary: €2500</div>
+                    <div id="edit"></div>
+                    <div id="delete"></div>
+                </li>
+            </ul>
+                <div class="input">
+                    <input type="text" id="income-title-input" name="title" placeholder="Titre">
+                    <input type="number" id="income-amount-input" name="amount" placeholder="€O">
+                    <button class="add-income"></button>
+                </div>
+            </div>
+            <div class="hide" id="all"></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
