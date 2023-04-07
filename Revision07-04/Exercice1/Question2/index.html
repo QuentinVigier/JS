@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>styles</title>
+    <meta charset="utf-8">
+    <style>
+        #parag1:active {
+            background-color: black;
+            color: white;
+            border: 1px black;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="parag1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+    </p>
+    <button onclick="changer_style()">Changer Style</button>
+    <script>
+        let text = document.getElementById("parag1");
+        text.classList.remove("active");
+        function changer_style() {
+            text.classList.add("active");
+        }
+    </script>
+</body>
+
+</html>

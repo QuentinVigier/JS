@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Entrez un nombre puyis cliquer sur le boutton pour calculer la factorielle</p>
+    <input id="nbre" type="number" id="nombre">
+    <button>Calculer</button>
+    <label id="resultat"></label>
+
+    <script>
+        i =  parseInt(document.getElementById("nbre"));
+        button = document.querySelector("button");
+            let resultat=1;
+            function factoriel(i){
+                if(i>0){
+                    resultat*=i;
+                    return factoriel(i-1);
+                } else{
+                    return resultat;
+                }
+            };
+        button.addEventListener("click", function() {
+            document.getElementById("resultat").innerHTML=factoriel(nbre);
+        });
+
+    </script>
+</body>
+
+</html>
