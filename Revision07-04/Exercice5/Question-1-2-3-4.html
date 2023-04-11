@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let ecran = 'paysage1';
+        function diaporama () {
+            if (ecran == 'paysage1') {
+                document.getElementById('diapo').setAttribute('src','paysage2.jpg');
+                ecran = 'paysage2';
+            }
+            else {
+                document.getElementById('diapo').setAttribute('src','paysage1.jpg');
+                ecran = 'paysage1';
+            }
+        }
+    </script>
+</head>
+<body onload="diapo = setInterval('diaporama();',2000);">
+    <h1>Diaporama</h1>
+    <img src="./paysage1.jpg" id="diapo" alt="paysage1" height="300px"></br>
+
+    <button onclick="clearInterval(diapo);">Stop</button>
+    <button onclick="diapo = setInterval('diaporama();',2000);">Relancer</button>
+
+
+</body>
+</html>

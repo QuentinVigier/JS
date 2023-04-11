@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id="ecran" src="./paysage1.jpg" alt="paysage1" height="300"/></br>
+
+    <button onclick="before();">Précédent</button>
+    <button onclick="next();">Suivant</button>
+
+    <script>
+        let photos = ['paysage1.jpg', 'paysage2.jpg', 'paysage3.jpg'];
+        let img_actuelle = 0;
+        function next () {
+            img_actuelle = img_actuelle + 1;
+            if (img_actuelle == photos.length){
+                img_actuelle = 0;
+            }
+            document.getElementById('ecran').src = photos[img_actuelle];
+        }
+        function before () {
+            img_actuelle = img_actuelle - 1;
+            if (img_actuelle<0){
+                img_actuelle = photos.length -1;
+            }
+            document.getElementById('ecran').src = photos[img_actuelle];
+        }
+    </script>
+</body>
+</html>
