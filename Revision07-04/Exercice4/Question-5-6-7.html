@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .couleurbtn {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick = "changeCouleur('yellow'); changebtn();">Couleur</button>
+    <button onclick = "normale();">Annuler</button>
+
+    <script>
+        function changeCouleur(couleur) {
+            document.body.style.background = couleur;
+        }
+        function changebtn(){
+            let button = document.querySelector('button');
+            button.classList.add('couleurbtn');
+        }
+        function normale(){
+            let button = document.querySelector('button');
+            button.classList.remove('couleurbtn');
+            changeCouleur('white');
+        }
+    </script>
+</body>
+
+</html>
