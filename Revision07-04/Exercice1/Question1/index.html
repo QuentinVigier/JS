@@ -4,14 +4,6 @@
 <head>
     <title>styles</title>
     <meta charset="utf-8">
-    <style>
-        .changer-style{
-    background-color: black;
-    color: white;
-    border: 1px black;
-    margin-left: 5px;
-}
-    </style>
 </head>
 
 <body>
@@ -23,8 +15,11 @@
     <button onclick="changer_style()">Changer Style</button>
     <script>
         function changer_style() {
-    let button = document.getElementById("parag1");
-    button.classList.add("changer-style");
+    document.getElementById("parag1").style.color="white";
+    document.getElementById("parag1").style.background="black";
+    document.getElementById("parag1").style.border="1px dotted grey";
+    document.getElementById("parag1").style.paddingLeft="5px";
+
 }
     </script>
 </body>
