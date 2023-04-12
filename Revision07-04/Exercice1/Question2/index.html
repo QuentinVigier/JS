@@ -22,9 +22,14 @@
     </p>
     <button onclick="changer_style()">Changer Style</button>
     <script>
-        let text = document.getElementById("parag1");
         function changer_style() {
-            text.classList.add("active");
+            if(document.getElementById("parag1").classList.contains("active")){
+                document.getElementById("parag1").classList.remove("active");
+            }
+            else{
+                document.getElementById("parag1").classList.add("active");
+            }
+
         }
     </script>
 </body>

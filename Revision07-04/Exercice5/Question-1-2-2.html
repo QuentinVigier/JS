@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galerie</title>
+    <style>
+        #galerie {
+            display: flex;
+            flex-direction: column;
+            width: 35%;
+            object-fit: contain;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body onkeyup="if(event.key=='ArrowDown'){
+    descendre();
+}
+else{
+    if(event.key=='ArrowUp'){
+        monter();
+    }
+}">
+    <h1>Galerie de photos</h1>
+
+    <div id="galerie">
+        <img id="img1" src="./paysage1.jpg" height="200px">
+        <img id="img2" src="./paysage2.jpg" height="200px">
+        <img id="img3" src="./paysage3.jpg" height="200px">
+        <img id="img4" src="./paysage4.jpg" height="200px">
+    </div>
+    </br>
+    <button onclick="monter();">Vers le haut</button>
+    <button onclick="descendre();">Vers le bas</button>
+
+    <script>
+        let pos = 1;
+        let nbre_images = 4;
+        function descendre() {
+            let idpaysage1 = 'img' + pos;
+            pos = pos + 1;
+            if (pos > nbre_images) {
+                pos = 1;
+            }
+            let nextid = 'img' + pos;
+            document.getElementById(idpaysage1).src = document.getElementById(nextid).src;
+            document.getElementById(nextid).src = 'paysage1.jpg';
+        }
+        function monter() {
+            let idpaysage1 = 'img' + pos;
+            pos = pos - 1;
+            if (pos < 1) {
+                pos = nbre_images;
+            }
+            let previousid = 'img' + pos;
+            document.getElementById(idpaysage1).src = document.getElementById(previousid).src;
+            document.getElementById(previousid).src = 'paysage1.jpg'
+        }
+    </script>
 </body>
+
 </html>
