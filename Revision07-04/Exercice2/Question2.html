@@ -10,25 +10,35 @@
 
 <body>
     <p>Entrez un nombre puyis cliquer sur le boutton pour calculer la factorielle</p>
-    <input id="nbre" type="number" id="nombre">
-    <button>Calculer</button>
-    <label id="resultat"></label>
+    <form>
+        <label for="entier">Entrez l'entier ici</label>
+        <input id="entier" type="text">
+        <br>
+        <label for="result">Resultat</label>
+        <input type="text" id="result" name="result" disabled>
+        <br>
+        <input type="button" value="Calculer" onclick="this.form.result.value=fact()">
+    </form>
+    
+
 
     <script>
-        i =  parseInt(document.getElementById("nbre"));
-        button = document.querySelector("button");
-            let resultat=1;
-            function factoriel(i){
-                if(i>0){
-                    resultat*=i;
-                    return factoriel(i-1);
-                } else{
-                    return resultat;
-                }
-            };
-        button.addEventListener("click", function() {
-            document.getElementById("resultat").innerHTML=factoriel(nbre);
-        });
+        function fact (){
+            var i = document.getElementById("entier").value;
+            i = parseInt(i);
+            return factorielle(i)
+        }
+
+
+        function factorielle(i) {
+            let c = 1;
+            let p = 1;
+            while (c <= i) {
+                p *= c;
+                c++;
+            }
+            return p
+        }
 
     </script>
 </body>

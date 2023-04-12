@@ -14,23 +14,24 @@
 
     <script>
         function factorielle(i) {
-            var f = 1, j = 1;
-            while (j <= i) {
-                f *= j;
-                j++;
+            let c = 1;
+            let p = 1;
+            while (c <= i) {
+                p *= c;
+                c++;
             }
-            return f;
-
+            return p
         }
+        
 
         var n = 7;
         var somme = 1;
-        var str = "1! ";
+        var compteur = "1! ";
         for (var i = 2; i <= n; i++) {
             somme += factorielle(i);
-            str += "+ " + i + "!";
+            compteur += "+ " + i + "!";
         }
-        document.getElementById("resultat").innerHTML = (str + "= " + somme);
+        document.getElementById("resultat").innerHTML = (compteur + "= " + somme);
     </script>
 </body>
 
