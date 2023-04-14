@@ -2,23 +2,54 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+body{
+    background: linear-gradient( #1a2a3a, #2a3a4a);
+    color: #F4EDDE ;
+    opacity: 0.8;
+}
 .wrapper{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100%;
-    height: 300px;
-
+    height: 10000px;
 }
 .articles{
-    height: 100%;
+    width: 100%;
+    height: auto;
+    overflow-wrap: break-word;
+
 }
 .navbar{
     width: 100%;
-    height: 100%;
-    background-color: brown;
+    height: auto;
+    background-color: #3a4a5a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ul{
+    padding: 1rem;
+}
+header{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 4rem;
+    background-color: #4a5a6a;
+}
+#article1, #article2, #article3, #article4, #article5, #article6, #article7, #article8{
+    margin-bottom: 2em;
+
+}
+h3{
+    margin-bottom: 1em;
 }
 
 @media screen and (min-width: 640px){
@@ -26,10 +57,17 @@
         display: flex;
         flex-direction: row-reverse;
         width: 100%;
-        height: 300px;
+        height: 100%;
     }
     .navbar{
         width: 25%;
+        padding: 1em;
+    }
+    .articles{
+        width: 75%;
+        height: auto;
+        object-fit: contain;
+
     }
 }
     
