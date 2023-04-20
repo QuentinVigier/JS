@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./jquery-3.6.4.js"></script>
+    <script src="./jquery-3.6.4.js" src="./jqueryui.js"></script>
 </head>
+
 <body>
-    <button>Afficher</button>
+    <button class="button1">Afficher</button>
+
+    <button class="button2">Bienvenue</button>
+    <p class='bjr' style="font-size: 55px; position: relative;">Bonjour</p>
+
     <div class="liste">
         <ol>
             <li>Element 1</li>
             <li>Element 2</li>
             <li>Element 3</li>
-            
+
         </ol>
     </div>
 
+
     <script>
+        $('.bjr').hide();
         $('.liste').hide();
-        $('button').click(function() {
+        $('.button1').click(function () {
             $('.liste').toggle('slow');
-            if ($('button').text() == 'Afficher') {
-                $('button').text("Cacher");
+            if ($('.button1').text() == 'Afficher') {
+                $('.button1').text("Cacher");
             }
-            else{
-                $('button').text('Afficher');
+            else {
+                $('.button1').text('Afficher');
             }
-    });
+        });
+
+        $('.button2').click(function () {
+            $('.bjr').show();
+            $(".bjr").animate({
+                // left: "+=3000px"
+                left: "+=45%",
+
+            },20000);
+        });
 
     </script>
 </body>
+
 </html>
