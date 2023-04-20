@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="./jquery-3.6.4.js" src="./jqueryui.js"></script>
+        <style>
+            #defile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+
+<body onload="setInterval('diaporama();',4000)">
+    <!-- L'ADDITION DU TEMPS DES EFFETS NE DOIT PAS DE PASSER LE TEMPS DE L'INTERVALLE OU UN DECALLAGE SE CREE ET ON PERDS LA FLUIDITE -->
+
+    <div id="defile">
+        <div id="img1"><img src="./img1.jpg" alt="Non"></div>
+        <div id="img2"><img src="./img2.png" alt="Non"></div>
+        <div id="img3"><img src="./img3.jpg" alt="Non"></div>
+        <div id="img4"><img src="./img4.jpg" alt="Non"></div>
+    </div>
+
+
+    <script>
+        var images = $("img").parent();
+        images.hide();
+        images.first().show();
+
+        var numeroImg = 0
+        function diaporama() {
+            numeroImg = numeroImg + 1;
+            if (numeroImg == images.length) {
+                numeroImg = 0;
+            }
+
+            // QUESTION 5 AVEC DEUX TRANSITIONS DIFFERENTES
+            // images.fadeOut(1000).delay(1000);
+            // images.eq(numeroImg).fadeIn(1000); 
+
+            images.animate({
+                left: "+=2000px"
+            }, 2000);
+            images.eq(numeroImg).animate({
+                left: "+=2000px"
+            }, 2000);
+        }
+
+    </script>
+</body>
+
+</html>
