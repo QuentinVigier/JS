@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.4.js"></script>
+    <style>
+        .bloc{
+            border: 2px solid red;
+            height: 200px;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        footer, header{
+            border: 1px solid black;
+            width: 80%;
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <div class="bloc">Cliquez ici</div>
+
+    <footer></footer>
+
+    <script>
+        $('.bloc').mouseover(function() {
+            console.log("Attention vous entre dans la zone rouge");
+        })
+        $('.bloc').mousedown(function() {
+            $('.bloc').css("border", "2px solid green");
+            $('header').append('<p>Up</p>').css("color", "green");
+        })
+        $('.bloc').mouseup(function() {
+            $('.bloc').css("border", "2px solid red");
+            $('footer').append('<p>Down</p>').css("color", "red");
+        })
+        $('header').click(function() {
+            $('header').children().last().remove();
+        })
+        $('footer').click(function() {
+            $('footer').children().last().remove();
+        })
+    </script>
+</body>
+</html>
