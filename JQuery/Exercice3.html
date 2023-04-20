@@ -8,6 +8,28 @@
     <script src="./jquery-3.6.4.js"></script>
 </head>
 <body>
-    
+    <button>Afficher</button>
+    <div class="liste">
+        <ol>
+            <li>Element 1</li>
+            <li>Element 2</li>
+            <li>Element 3</li>
+            
+        </ol>
+    </div>
+
+    <script>
+        $('.liste').hide();
+        $('button').click(function() {
+            $('.liste').toggle('slow');
+            if ($('button').text() == 'Afficher') {
+                $('button').text("Cacher");
+            }
+            else{
+                $('button').text('Afficher');
+            }
+    });
+
+    </script>
 </body>
 </html>
