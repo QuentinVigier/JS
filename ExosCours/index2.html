@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titre">Mon test DOM</h1>
+    <div id="dv">
+        <h1>Premier fils</h1>
+        <h2>Deuxième fils</h2>
+        <h3>Troisième fils</h3>
+    </div>
+
+    <input type="button" value="Effacer" onclick="effacer(document.getElementById('dv'))">
+    <input type="button" value="Remplacer texte" onclick="remplacer(document.getElementById('titre'),'Un nouveau titre')">
+    <input type="button" value="Afficher texte" onclick="alert (afficher(document.getElementById('dv')))">
+    <input type="button" value="Effacer titre" onclick="effacer(document.getElementById('titre'))">
+
+    <script>
+        function effacer(el){
+            if (el !=null){
+                while (el.hasChildNodes()) {
+                    var noeudFils = el.firstChild;
+                    el.removeChild(noeudFils);
+                }
+            }
+        }
+        function remplacer(el,texte) {
+            if (el != null){
+                effacer(el);
+                var nouveauNoeud = document.createTextNode(texte);
+                el.appendChild(nouveauNoeud);
+            }
+        }
+        function afficher(el) {
+            var texte = " ";
+            if (el != null) {
+                if (el.hasChildNodes()) {
+                    for (var i = 0; i<el.childNodes.length; i++) {
+                        var noeudFils = el.childNodes[i];
+                        if (noeudFils.nodeValue != null) {
+                            texte += noeudFils.nodeValue;
+                        }
+                        else {
+                            texte += afficher(noeudFils);
+                        }
+                    }
+                }
+            }
+            return texte;
+        }
+    </script>
+</body>
+</html>

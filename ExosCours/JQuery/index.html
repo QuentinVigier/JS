@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="monDiv">Bonjour</div>
+    <a href="#" onclick="$('#monDiv').hide();">Disparition</a>
+    <a href="#" onclick="$('#monDiv').show();">Réapparition</a>
+    
+    <div class="test"></div>
+
+    <script src="./jquery.js">
+
+
+
+        $("div.test").add("p.quote").addClass("blue").slideDown("slow");
+        $.each([1,2,3], function() {
+            document.write(this + 1); 
+        });
+    </script>
+</body>
+</html>

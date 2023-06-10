@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chameau</h1>
+    <div id="zoo">
+        Je suis un <i>cheval</i> mais je voudrais être un <span id="felin">tigre</span>
+    </div>
+    <form>
+        <input type="button" value="Qui suis-je" onclick="deviner()"/>
+    </form>
+    <input type="button" value="Créer noeuds" onclick="createNode()"/>
+    <input type="button" value="Créer image" onclick="createImg()"/>
+    
+
+    <script>
+        function createNode() {
+            var body = document.documentElement.lastChild;
+            var link = createLink("https://www.google.fr/","Google");
+            body.appendChild(link);
+        }
+        function createLink(href, texte) {
+            var element = document.createElement("a");
+            var texteNode = document.createTextNode(texte);
+            element.appendChild(texteNode);
+            element.setAttribute("href", href);
+            return element;
+        }
+        function createImg(){
+            var body = document.documentElement.lastChild;
+            var img = createImage("./paysage.jpeg","Paysage");
+            body.appendChild(img);
+        }
+        function createImage(src,alt) {
+            var element = document.createElement("img");
+            element.setAttribute("src",src);
+            element.setAttribute("alt",alt);
+            return element;
+        }
+
+        function deviner() {
+            var element = document.documentElement.lastChild;
+            alert("je suis un " + element.nodeName);
+            var autreElement = document.getElementsByTagName("h1")[0];
+            alert("je suis un " + autreElement.nodeValue);
+            var enfant = autreElement.firstChild;
+            alert("je suis un " + enfant.nodeValue);
+            element = document.getElementById('felin').lastChild;
+            alert("je suis un " + element.nodeValue);
+            alert("je suis un " + element.parentNode.getAttributeNode('id').nodeValue);
+        }
+        // function Chien(nom,race) {
+        //     this.nom = nom;
+        //     this.race = race;
+        //     this.toString = afficher;
+        // }
+
+        // function afficher() {
+        //     document.write("Ce chien s'apelle " + this.nom + ". C'est un " + this.race + ".");
+        // }
+        // let clebs =  new Chien("Milou","Mastiff");
+        // clebs.toString();
+
+    </script>
+</body>
+</html>
