@@ -18,6 +18,9 @@
                 justify-content: center;
                 flex-direction: column;
             }
+            img{
+                position: relative;
+            }
         </style>
     </head>
 
@@ -37,24 +40,20 @@
         images.hide();
         images.first().show();
 
-        var numeroImg = 0
         function diaporama() {
-            numeroImg = numeroImg + 1;
-            if (numeroImg == images.length) {
-                numeroImg = 0;
-            }
+        images.first().animate({
+            "margin-left": -650
+        },1000, function(){
+            images.first().css("margin-left",0).appendTo("#defile");
+        });
+    }
 
             // QUESTION 5 AVEC DEUX TRANSITIONS DIFFERENTES
             // images.fadeOut(1000).delay(1000);
             // images.eq(numeroImg).fadeIn(1000); 
 
-            images.animate({
-                left: "+=2000px"
-            }, 2000);
-            images.eq(numeroImg).animate({
-                left: "+=2000px"
-            }, 2000);
-        }
+
+        
 
     </script>
 </body>
